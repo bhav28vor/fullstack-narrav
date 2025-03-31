@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./backend/db:/app/db  # 🔹 Persist SQLite database
+    environment:
+      - DATABASE_URL=sqlite:///db/database.db
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    stdin_open: true  # Keeps the container running
+    tty: true  # Prevents the container from stopping

@@ -1,0 +1,15 @@
+[
+    {
+      "company": "Toyota",
+      "car_model": "Corolla",
+      "date_of_sale": "2024-01-15",
+      "price": 20000
+    },
+    {
+      "company": "Honda",
+      "car_model": "Civic",
+      "date_of_sale": "2024-02-20",
+      "price": 22000
+    }
+  ]
+  
